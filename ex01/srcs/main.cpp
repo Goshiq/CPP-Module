@@ -1,16 +1,13 @@
-#include "phonebook.h"
+#include "Phonebook.h"
 
-int main(int argc, char **argv)
+int main()
 {
-	(void)argc;
-	(void)argv;
-
 	std::string inp;
 
     while (1)
     {
+    	Phonebook book;
         std::cin >> inp;
-        Phonebook book;
         std::cout << book.getCount();
     }
 }

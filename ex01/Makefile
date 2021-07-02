@@ -2,16 +2,17 @@ CC		= clang++
 
 DIR		= ./srcs
 
-H_DIR	= ./includes/
+H_DIR	= ./includes
 
 NAME	= phonebook
 
-HFILES	= phonebook.h
+HFILES	= Phonebook.h
 
-FLAGS	= -Wall -Wextra -Werror 
+FLAGS	= -Wall -Wextra -Werror
 
 SRCS	= main.cpp \
-		  phonebook.cpp
+		  phonebook.cpp \
+		  phonebook.class.cpp
 
 OBJ_DIR	= ./objects
 

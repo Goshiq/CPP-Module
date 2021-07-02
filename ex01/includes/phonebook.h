@@ -4,18 +4,15 @@
 # include <iostream>
 # include <string.h>
 
-class Phonebook {
-private:
-    static int count;
+class Phonebook
+{
+	private:
+    	static int count;
 
-public:
-    Phonebook() {
-        count++;
-    }
-
-    static int getCount() {
-        return count;
-    }
+	public:
+    	Phonebook();
+    	~Phonebook();
+    	int getCount();
 };
 
 #endif
