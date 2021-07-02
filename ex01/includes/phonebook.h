@@ -7,8 +7,6 @@
 class Phonebook {
 private:
     static int count;
-
-
 };
 
 #endif

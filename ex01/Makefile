@@ -1,38 +1,38 @@
 CC		= clang++
 
-DIR		= ./srcs/
+DIR		= ./srcs
 
 H_DIR	= ./includes/
 
 NAME	= phonebook
 
-HFILES	= phonebook.hpp
+HFILES	= phonebook.h
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror 
 
-SRCS	= phonebook.cpp
+SRCS	= main.cpp \
+		  phonebook.cpp
 
-OBJ_DIR	= ./objects/
+OBJ_DIR	= ./objects
 
 OBJWDIR	= $(addprefix $(OBJ_DIR), $(OBJS))
 
 vpath %.cpp	$(DIR)
-vpath %.hpp	$(H_DIR)
+vpath %.h	$(H_DIR)
 vpath %.o	$(OBJ_DIR)
 
-OBJS		= $(SRCS:.cpp=.o)
+OBJS		= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
-#%.o:		%.cpp $(HFILES) | $(OBJ_DIR)
-#			$(CC) $(FLAGS) -c $< -I$(H_DIR) -o $(OBJ_DIR)$@
+$(OBJ_DIR)/%.o:	$(DIR)/%.cpp $(HFILES) | $(OBJ_DIR)
+			$(CC) $(CFLAGS) -I$(H_DIR) -c $< -o $@
 
 $(NAME):	$(OBJS) | $(OBJ_DIR)
-			mv $< $(OBJ_DIR)
-			$(CC) $(OBJWDIR) -I$(H_DIR) -o $@
-
-all:		$(NAME) | $(OBJ_DIR)
+			$(CC) $^ -I$(H_DIR) -o $@
 
 $(OBJ_DIR):
 			mkdir -p $@
+
+all:		$(NAME) | $(OBJ_DIR)
 
 clean:
 			rm -rf $(OBJ_DIR)

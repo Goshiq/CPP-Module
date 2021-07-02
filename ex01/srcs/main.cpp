@@ -1,11 +1,14 @@
-#include "../includes/phonebook.hpp"
+#include "phonebook.h"
 
 int main(int argc, char **argv)
 {
-    str inp;
+	(void)argc;
+	(void)argv;
+
+	std::string inp;
 
     while (1)
     {
-        std::cin >> str
+        std::cin >> inp;
     }
 }

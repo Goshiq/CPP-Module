@@ -1,9 +1,6 @@
-//
-// Created by Jerald Mogo on 6/8/21.
-//
+#include "phonebook.h"
 
-#include "../includes/phonebook.hpp"
-
-int main(int argc, char **argv) {
-    Phonebook   book;
+int	kek(void)
+{
+	return (0);
 }
