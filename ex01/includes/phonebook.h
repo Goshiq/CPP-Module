@@ -7,6 +7,15 @@
 class Phonebook {
 private:
     static int count;
+
+public:
+    Phonebook() {
+        count++;
+    }
+
+    static int getCount() {
+        return count;
+    }
 };
 
 #endif

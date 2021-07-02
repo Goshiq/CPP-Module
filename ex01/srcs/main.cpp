@@ -10,5 +10,7 @@ int main(int argc, char **argv)
     while (1)
     {
         std::cin >> inp;
+        Phonebook book;
+        std::cout << book.getCount();
     }
 }
