@@ -7,7 +7,14 @@
 
 # define MAX_RECORDS 8
 # define SYMBOL '*'
-# define TERMINAL_WIDTH 70
+# define T_WIDTH 70
+
+typedef enum	e_line
+{
+	CENTER,
+	LEFT,
+	RIGHT,
+}				t_line;
 
 class Phonebook
 {
@@ -21,6 +28,9 @@ class Phonebook
     	int getCount() const;
 };
 
+int	print_commands(const char *line);
+int	print_enter(const char *line);
+int	print_line(const char *line, t_line pos);
 int	show_welcome(void);
 int	start_process(void);
 

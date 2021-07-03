@@ -6,12 +6,13 @@ H_DIR	= ./includes
 
 NAME	= phonebook
 
-HFILES	= Phonebook.h
+HFILES	= phonebook.h
 
 FLAGS	= -Wall -Wextra -Werror
 
 SRCS	= main.cpp \
 		  phonebook.cpp \
+		  printer.cpp \
 		  start_process.cpp \
 
 OBJ_DIR	= ./objects
