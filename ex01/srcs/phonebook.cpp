@@ -1,6 +1,17 @@
 #include "Phonebook.h"
 
-int	kek(void)
+int	Phonebook::count = 0;
+
+Phonebook::Phonebook()
 {
-	return (0);
+	Phonebook::count++;
+}
+
+Phonebook::~Phonebook()
+{
+}
+
+int	Phonebook::getCount()
+{
+	return count;
 }
