@@ -4,14 +4,14 @@ int	Phonebook::count = 0;
 
 Phonebook::Phonebook()
 {
-	Phonebook::count++;
+	Phonebook::id = Phonebook::count++;
 }
 
 Phonebook::~Phonebook()
 {
 }
 
-int	Phonebook::getCount()
+int	Phonebook::getCount() const
 {
 	return count;
 }

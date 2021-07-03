@@ -12,6 +12,7 @@ FLAGS	= -Wall -Wextra -Werror
 
 SRCS	= main.cpp \
 		  phonebook.cpp \
+		  start_process.cpp \
 
 OBJ_DIR	= ./objects
 

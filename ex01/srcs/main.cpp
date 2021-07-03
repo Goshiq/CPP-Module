@@ -4,10 +4,7 @@ int main()
 {
 	std::string inp;
 
-    while (1)
-    {
-    	Phonebook book;
-        std::cin >> inp;
-        std::cout << book.getCount();
-    }
+	if (show_welcome() || start_process())
+		return (1);
+	return (0);
 }
