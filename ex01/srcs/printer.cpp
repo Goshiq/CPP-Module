@@ -1,6 +1,6 @@
 #include "phonebook.h"
 
-int	print_commands()
+int	print_commands(void)
 {
 	if (print_line("AVAILABLE COMMANDS:", CENTER)
 			|| print_line("ADD - to create a new contact", LEFT)

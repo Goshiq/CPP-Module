@@ -8,11 +8,12 @@ NAME	= phonebook
 
 HFILES	= phonebook.h
 
-FLAGS	= -Wall -Wextra -Werror
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	= main.cpp \
 		  phonebook.cpp \
 		  printer.cpp \
+		  search.cpp \
 		  start_process.cpp \
 
 OBJ_DIR	= ./objects
@@ -26,7 +27,7 @@ vpath %.o	$(OBJ_DIR)
 OBJS		= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
 $(OBJ_DIR)/%.o:	$(DIR)/%.cpp $(HFILES) | $(OBJ_DIR)
-			$(CC) $(CFLAGS) -I$(H_DIR) -c $< -o $@
+			$(CC) $(CPPFLAGS) -I$(H_DIR) -c $< -o $@
 
 $(NAME):	$(OBJS) | $(OBJ_DIR)
 			$(CC) $^ -I$(H_DIR) -o $@

@@ -29,11 +29,11 @@ class Phonebook
     	int getCount() const;
 };
 
-int		print_commands(const char *line);
-int		print_enter(const char *line);
-void	print_full(void);
-int		print_line(const char *line, t_line pos, int new_line = 1);
-int		show_welcome(void);
-int		start_process(void);
+int			print_commands(void);
+void		print_full(void);
+int			print_line(const char *line, t_line pos, int new_line = 1);
+void		search_it(Phonebook books[MAX_RECORDS]);
+int			show_welcome(void);
+int			start_process(void);
 
 #endif
