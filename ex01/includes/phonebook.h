@@ -1,6 +1,7 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
+# include <algorithm>
 # include <iostream>
 # include <iomanip>
 # include <string.h>

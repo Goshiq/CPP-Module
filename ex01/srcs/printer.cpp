@@ -23,7 +23,7 @@ int	print_line(const char *line, t_line pos, int new_line)
 	int			padding;
 	int			len;
 
-	len = std::strlen(line);
+	len = strlen(line);
 	padding = (T_WIDTH - len) / 2;
 	if (padding < 0)
 	{
