@@ -1,24 +1,27 @@
-CC		= clang++
+CC		=	clang++
 
-DIR		= ./srcs
+DIR		=	./srcs
 
-H_DIR	= ./includes
+H_DIR	=	./includes
 
-NAME	= phonebook
+NAME	=	phonebook
 
-HFILES	= phonebook.h
+HFILES	=	contact.h \
+			phonebook.h \
 
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	= main.cpp \
-		  phonebook.cpp \
-		  printer.cpp \
-		  search.cpp \
-		  start_process.cpp \
+SRCS	=	main.cpp	\
+			contact.cpp	\
+			phonebook.cpp	\
+			printer.cpp	\
+			search.cpp	\
+			start_process.cpp	\
+			utils.cpp	\
 
-OBJ_DIR	= ./objects
+OBJ_DIR	=	./objects
 
-OBJWDIR	= $(addprefix $(OBJ_DIR), $(OBJS))
+OBJWDIR	=	$(addprefix $(OBJ_DIR), $(OBJS))
 
 vpath %.cpp	$(DIR)
 vpath %.h	$(H_DIR)

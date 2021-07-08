@@ -1,10 +1,7 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
-# include <algorithm>
-# include <iostream>
-# include <iomanip>
-# include <string.h>
+# include "contact.h"
 
 # define MAX_RECORDS 8
 # define PADDING 5
@@ -21,15 +18,14 @@ typedef enum	e_line
 class Phonebook
 {
 	private:
-    	static int	count;
-		int			id;
+		Contact		contacts[MAX_RECORDS];
 
 	public:
     	Phonebook();
     	~Phonebook();
-    	int getCount() const;
 };
 
+int			my_strcmp(std::string str1, std::string str2);
 int			print_commands(void);
 void		print_full(void);
 int			print_line(const char *line, t_line pos, int new_line = 1);

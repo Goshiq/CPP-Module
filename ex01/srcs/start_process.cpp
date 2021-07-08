@@ -18,12 +18,11 @@ int	start_process(void)
 	{
 		print_line("", LEFT, 0);
 		std::cin >> inp;
-		std::transform(inp.begin(), inp.end(),inp.begin(), ::toupper);
-		if (inp == "ADD")
-			std::cout << book[0].getCount() << std::endl;
-		else if (inp == "SEARCH")
+		if (!my_strcmp(inp, "ADD"))
+			std::cout << "ADDING" << std::endl;
+		else if (!my_strcmp(inp, "SEARCH"))
 			search_it(book);
-		else if (inp == "EXIT")
+		else if (!my_strcmp(inp, "EXIT"))
 			return (say_good_bye());
 	}
 	return (0);
