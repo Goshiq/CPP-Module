@@ -18,6 +18,7 @@ typedef enum	e_line
 class Phonebook
 {
 	private:
+		static	int	count;
 		Contact		contacts[MAX_RECORDS];
 
 	public:
