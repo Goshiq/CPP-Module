@@ -18,14 +18,23 @@ void	print_full(void)
 	std::cout.copyfmt(def);
 }
 
+int	print_good_bye(void)
+{
+	print_full();
+	print_line("GOODBYE!", CENTER);
+	print_line("HAVE A NICE DAY", CENTER);
+	print_full();
+	return (0);
+}
+
 int	print_line(const char *line, t_line pos, int new_line)
 {
-	int			padding;
+	int			center_padding;
 	int			len;
 
 	len = strlen(line);
-	padding = (T_WIDTH - len) / 2;
-	if (padding < 0)
+	center_padding = (T_WIDTH - len) / 2;
+	if (center_padding < 0)
 	{
 		std::cout << "ERROR: Your terminal is too small for this phonebook\n";
 		return (1);
@@ -36,7 +45,7 @@ int	print_line(const char *line, t_line pos, int new_line)
 	std::ios def(NULL);
     def.copyfmt(std::cout);
 	if (pos == CENTER)
-		std::cout.width(padding);
+		std::cout.width(center_padding);
 	else if (pos == LEFT)
 		std::cout.width(PADDING);
 	std::cout << std::setfill(' ') << "" << line;
@@ -49,12 +58,13 @@ int	print_line(const char *line, t_line pos, int new_line)
 	return (0);
 }
 
-int	show_welcome(void)
+int	show_welcome(int	show_top)
 {
 	const char	*welcomeMessage = "WELCOME TO THE OLS-STYLE PHONEBOOK";
 
-	print_full();
-	if (print_line(welcomeMessage, CENTER))
+	if (show_top)
+		print_full();
+	if (show_top && print_line(welcomeMessage, CENTER))
 		return (1);
 	print_full();
 	if (print_commands())

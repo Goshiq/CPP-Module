@@ -1,7 +1,7 @@
 #include "phonebook.h"
 
-void	search_it(Phonebook books[MAX_RECORDS])
+void	search_it(Phonebook phonebook)
 {
-	(void)books;
+	(void)phonebook;
 	print_line("SEARCHING...", CENTER);
 }

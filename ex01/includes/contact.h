@@ -15,10 +15,27 @@ class	Contact
 		std::string	last_name;
 		std::string	nickname;
 		std::string	phone_number;
-		std::string	darkest_secret;
+		std::string	secret;
 	public:
 		Contact();
 		~Contact();
+		int	get_count(void);
+		Contact		set_first_name(std::string new_data);
+		std::string	get_first_name(void);
+		Contact		set_last_name(std::string new_data);
+		std::string	get_last_name(void);
+		Contact		set_nickname(std::string new_data);
+		std::string	get_nickname(void);
+		Contact		set_phone_number(std::string new_data);
+		std::string	get_phone_number(void);
+		Contact		set_secret(std::string new_data);
+		std::string	get_secret(void);
+
+		Contact	enter_first_name(void);
+		Contact	enter_last_name(void);
+		Contact	enter_nickname(void);
+		Contact	enter_phone_number(void);
+		Contact	enter_secret(void);
 };
 
 #endif

@@ -18,20 +18,23 @@ typedef enum	e_line
 class Phonebook
 {
 	private:
-		static	int	count;
 		Contact		contacts[MAX_RECORDS];
 
 	public:
     	Phonebook();
     	~Phonebook();
+		int			get_contact_count(void);
+		Contact		add_contact(void);
+		int			search_contact(void);
 };
 
 int			my_strcmp(std::string str1, std::string str2);
 int			print_commands(void);
 void		print_full(void);
+int			print_good_bye(void);
 int			print_line(const char *line, t_line pos, int new_line = 1);
-void		search_it(Phonebook books[MAX_RECORDS]);
-int			show_welcome(void);
+void		search_it(Phonebook phonebook);
+int			show_welcome(int	show_top);
 int			start_process(void);
 
 #endif
