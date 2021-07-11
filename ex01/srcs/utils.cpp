@@ -1,5 +1,11 @@
 #include "phonebook.h"
 
+void	clear_cin(void)
+{
+	std::cin.clear();
+	std::cin.ignore(555555, '\n');
+}
+
 int	my_strcmp(std::string str1, std::string str2)
 {
 	size_t	i;

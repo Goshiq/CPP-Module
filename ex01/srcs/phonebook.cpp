@@ -26,5 +26,26 @@ Contact	Phonebook::add_contact(void)
 	new_contact.enter_secret();
 	contacts[new_count % MAX_RECORDS] = new_contact;
 	print_line("The contact has been created!", CENTER, 1);
+	clear_cin();
 	return (contacts[new_count % MAX_RECORDS]);
+}
+
+void	Phonebook::search_contact(void)
+{
+	int	index;
+
+	index = -1;
+	while (index < 0 || index >= MAX_RECORDS)
+	{
+		print_line("Enter the index of the contact: ", LEFT, 0);
+		std::cin >> index;
+		if (std::cin.fail())
+		{
+			print_line("Incorrect input format", LEFT, 1);
+			std::cin.clear();
+			std::cin.ignore(55555, '\n');
+			index = -1;
+		}
+	}
+	clear_cin();
 }

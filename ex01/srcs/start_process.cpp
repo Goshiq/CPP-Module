@@ -8,11 +8,11 @@ int	start_process(void)
 	while (1)
 	{
 		print_line("", LEFT, 0);
-		std::cin >> inp;
+		std::getline(std::cin, inp);
 		if (!my_strcmp(inp, "ADD"))
 			phonebook.add_contact();
 		else if (!my_strcmp(inp, "SEARCH"))
-			search_it(phonebook);
+			phonebook.search_contact();
 		else if (!my_strcmp(inp, "EXIT"))
 			return (print_good_bye());
 		else

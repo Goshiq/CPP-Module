@@ -25,9 +25,10 @@ class Phonebook
     	~Phonebook();
 		int			get_contact_count(void);
 		Contact		add_contact(void);
-		int			search_contact(void);
+		void		search_contact(void);
 };
 
+void		clear_cin();
 int			my_strcmp(std::string str1, std::string str2);
 int			print_commands(void);
 void		print_full(void);

@@ -39,7 +39,7 @@ Contact	Contact::enter_first_name(void)
 	while (this->first_name == "")
 	{
 		print_line("Enter the first name: ", LEFT, 0);
-		std::cin >> this->first_name;
+		std::getline(std::cin, this->first_name);
 	}
 	return (*this);
 }
