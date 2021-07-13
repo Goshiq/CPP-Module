@@ -35,17 +35,23 @@ void	Phonebook::search_contact(void)
 	int	index;
 
 	index = -1;
-	while (index < 0 || index >= MAX_RECORDS)
+	if (contacts[0].get_first_name() == "")
+	{
+		print_line("THE PHONEBOOK IS EMPTY!", CENTER, 1);
+		return ;
+	}
+	while (index < 1 || index > MAX_RECORDS)
 	{
 		print_line("Enter the index of the contact: ", LEFT, 0);
 		std::cin >> index;
-		if (std::cin.fail())
+		if (std::cin.fail() || index < 1 || index > MAX_RECORDS ||
+			contacts[index - 1].get_first_name() == "")
 		{
 			print_line("Incorrect input format", LEFT, 1);
-			std::cin.clear();
-			std::cin.ignore(55555, '\n');
+			clear_cin();
 			index = -1;
 		}
 	}
+	contacts[index - 1].show_full();
 	clear_cin();
 }

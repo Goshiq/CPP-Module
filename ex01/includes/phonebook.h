@@ -6,7 +6,13 @@
 # define MAX_RECORDS 8
 # define PADDING 5
 # define SYMBOL '*'
+# define SEPARATOR '|'
+
+/* Table width */
 # define T_WIDTH 70
+
+/* Column width */
+# define C_WIDTH 10
 
 typedef enum	e_line
 {

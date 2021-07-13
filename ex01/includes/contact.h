@@ -36,6 +36,7 @@ class	Contact
 		Contact	enter_nickname(void);
 		Contact	enter_phone_number(void);
 		Contact	enter_secret(void);
+		void	show_full(void);
 };
 
 #endif

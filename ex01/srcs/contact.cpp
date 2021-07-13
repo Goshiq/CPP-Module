@@ -34,6 +34,50 @@ std::string	Contact::get_first_name(void)
 	return (this->first_name);
 }
 
+Contact		Contact::set_last_name(std::string	new_name)
+{
+	this->last_name = new_name;
+	return (*this);
+}
+
+std::string	Contact::get_last_name(void)
+{
+	return (this->last_name);
+}
+
+Contact		Contact::set_nickname(std::string	new_name)
+{
+	this->nickname = new_name;
+	return (*this);
+}
+
+std::string	Contact::get_nickname(void)
+{
+	return (this->nickname);
+}
+
+Contact		Contact::set_phone_number(std::string	new_name)
+{
+	this->phone_number = new_name;
+	return (*this);
+}
+
+std::string	Contact::get_phone_number(void)
+{
+	return (this->phone_number);
+}
+
+Contact		Contact::set_secret(std::string	new_name)
+{
+	this->secret = new_name;
+	return (*this);
+}
+
+std::string	Contact::get_secret(void)
+{
+	return (this->secret);
+}
+
 Contact	Contact::enter_first_name(void)
 {
 	while (this->first_name == "")
@@ -82,4 +126,9 @@ Contact	Contact::enter_secret(void)
 		std::cin >> this->secret;
 	}
 	return (*this);
+}
+
+void	Contact::show_full(void)
+{
+	return ;
 }
