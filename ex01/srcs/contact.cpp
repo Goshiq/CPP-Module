@@ -18,6 +18,35 @@ Contact::~Contact(void)
 {
 }
 
+std::ostream& operator<< (std::ostream &out, Contact &contact)
+{
+	std::cout.width(10);
+	if (contact.first_name.length() <= 10)
+		std::cout << contact.first_name << '|';
+	else
+	{
+		std::cout.width(9);
+		std::cout << contact.first_name.substr(0, 9) << '.' << '|';
+	}
+	std::cout.width(10);
+	if (contact.last_name.length() <= 10)
+		std::cout << contact.last_name << '|';
+	else
+	{
+		std::cout.width(9);
+		std::cout << contact.last_name.substr(0, 9) << '.' << '|';
+	}
+	std::cout.width(10);
+	if (contact.nickname.length() <= 10)
+		std::cout << contact.nickname << '|';
+	else
+	{
+		std::cout.width(9);
+		std::cout << contact.nickname.substr(0, 9) << '.' << '|';
+	}
+	return (out);
+}
+
 int	Contact::get_count(void)
 {
 	return count;
@@ -93,7 +122,7 @@ Contact	Contact::enter_last_name(void)
 	while (this->last_name == "")
 	{
 		print_line("Enter the last name: ", LEFT, 0);
-		std::cin >> this->last_name;
+		std::getline(std::cin, this->last_name);
 	}
 	return (*this);
 }
@@ -103,7 +132,7 @@ Contact	Contact::enter_nickname(void)
 	while (this->nickname == "")
 	{
 		print_line("Enter the nickname: ", LEFT, 0);
-		std::cin >> this->nickname;
+		std::getline(std::cin, this->nickname);
 	}
 	return (*this);
 }
@@ -113,7 +142,7 @@ Contact	Contact::enter_phone_number(void)
 	while (this->phone_number == "")
 	{
 		print_line("Enter the phone number: ", LEFT, 0);
-		std::cin >> this->phone_number;
+		std::getline(std::cin, this->phone_number);
 	}
 	return (*this);
 }
@@ -123,7 +152,7 @@ Contact	Contact::enter_secret(void)
 	while (this->secret == "")
 	{
 		print_line("Enter the darkest secret: ", LEFT, 0);
-		std::cin >> this->secret;
+		std::getline(std::cin, this->secret);
 	}
 	return (*this);
 }
@@ -144,4 +173,12 @@ void	Contact::show_full(int	index)
 	print_line("Darkest secret: ", LEFT, 0);
 	std::cout << this->secret << std::endl;
 	print_full();
+}
+
+void	Contact::show_short(int	index)
+{
+	print_line("|", LEFT, 0);
+	std::cout.width(10);
+	std::cout << index << '|';
+	std::cout << *this << std::endl;
 }

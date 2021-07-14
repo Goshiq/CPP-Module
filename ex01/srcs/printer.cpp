@@ -58,6 +58,31 @@ int	print_line(const char *line, t_line pos, int new_line)
 	return (0);
 }
 
+void	print_top(void)
+{
+	std::ios def(NULL);
+    def.copyfmt(std::cout);
+
+	print_full();
+	print_line("", LEFT, 0);
+	std::cout << SEPARATOR;
+	std::cout.width(C_WIDTH);
+	std::cout << "Index";
+	std::cout << SEPARATOR;
+	std::cout.width(C_WIDTH);
+	std::cout << "First name";
+	std::cout << SEPARATOR;
+	std::cout.width(C_WIDTH);
+	std::cout << "Last name";
+	std::cout << SEPARATOR;
+	std::cout.width(C_WIDTH);
+	std::cout << "Nickname";
+	std::cout << SEPARATOR << std::endl;
+	print_full();
+
+	std::cout.copyfmt(def);
+}
+
 int	show_welcome(int	show_top)
 {
 	const char	*welcomeMessage = "WELCOME TO THE OLS-STYLE PHONEBOOK";

@@ -37,6 +37,9 @@ class	Contact
 		Contact	enter_phone_number(void);
 		Contact	enter_secret(void);
 		void	show_full(int	index);
+		void	show_short(int	index);
+
+		friend	std::ostream& operator<< (std::ostream &out, Contact &contact);
 };
 
 #endif

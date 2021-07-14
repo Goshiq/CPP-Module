@@ -40,6 +40,7 @@ int			print_commands(void);
 void		print_full(void);
 int			print_good_bye(void);
 int			print_line(const char *line, t_line pos, int new_line = 1);
+void		print_top(void);
 void		search_it(Phonebook phonebook);
 int			show_welcome(int	show_top);
 int			start_process(void);

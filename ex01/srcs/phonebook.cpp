@@ -26,7 +26,7 @@ Contact	Phonebook::add_contact(void)
 	new_contact.enter_secret();
 	contacts[new_count % MAX_RECORDS] = new_contact;
 	print_line("The contact has been created!", CENTER, 1);
-	clear_cin();
+	//clear_cin();
 	return (contacts[new_count % MAX_RECORDS]);
 }
 
@@ -39,6 +39,13 @@ void	Phonebook::search_contact(void)
 	{
 		print_line("THE PHONEBOOK IS EMPTY!", CENTER, 1);
 		return ;
+	}
+	print_top();
+	for (int i = 0; i < MAX_RECORDS; ++i)
+	{
+		if (contacts[i].get_first_name() == "")
+			break ;
+		contacts[i].show_short(i + 1);
 	}
 	while (index < 1 || index > MAX_RECORDS)
 	{
