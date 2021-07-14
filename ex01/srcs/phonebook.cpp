@@ -52,6 +52,6 @@ void	Phonebook::search_contact(void)
 			index = -1;
 		}
 	}
-	contacts[index - 1].show_full();
+	contacts[index - 1].show_full(index);
 	clear_cin();
 }

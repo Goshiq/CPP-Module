@@ -128,7 +128,20 @@ Contact	Contact::enter_secret(void)
 	return (*this);
 }
 
-void	Contact::show_full(void)
+void	Contact::show_full(int	index)
 {
-	return ;
+	print_full();
+	print_line("Contact #", CENTER, 0);
+	std::cout << index << std::endl;
+	print_line("First name: ", LEFT, 0);
+	std::cout << this->first_name << std::endl;
+	print_line("Last name: ", LEFT, 0);
+	std::cout << this->last_name << std::endl;
+	print_line("Nickname: ", LEFT, 0);
+	std::cout << this->nickname << std::endl;
+	print_line("Phone number: ", LEFT, 0);
+	std::cout << this->phone_number << std::endl;
+	print_line("Darkest secret: ", LEFT, 0);
+	std::cout << this->secret << std::endl;
+	print_full();
 }
