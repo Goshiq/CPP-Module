@@ -4,27 +4,21 @@ DIR		=	./srcs
 
 H_DIR	=	./includes
 
-NAME	=	phonebook
+NAME	=	anawesomejob
 
-HFILES	=	contact.h \
-			phonebook.h \
+HFILES	=	Account.hpp \
 
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	=	main.cpp	\
-			contact.cpp	\
-			phonebook.cpp	\
-			printer.cpp	\
-			search.cpp	\
-			start_process.cpp	\
-			utils.cpp	\
+SRCS	=	Account.cpp	\
+			tests.cpp	\
 
 OBJ_DIR	=	./objects
 
 OBJWDIR	=	$(addprefix $(OBJ_DIR), $(OBJS))
 
 vpath %.cpp	$(DIR)
-vpath %.h	$(H_DIR)
+vpath %.hpp	$(H_DIR)
 vpath %.o	$(OBJ_DIR)
 
 OBJS		= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
