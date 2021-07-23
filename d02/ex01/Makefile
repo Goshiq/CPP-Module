@@ -12,7 +12,6 @@ CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	=	newZombie.cpp	\
 			main.cpp \
-			randomChump.cpp \
 			Zombie.cpp	\
 
 OBJ_DIR	=	./objects
