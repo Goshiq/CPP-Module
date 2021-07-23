@@ -10,9 +10,9 @@ HFILES	=	Zombie.hpp \
 
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	=	newZombie.cpp	\
-			main.cpp \
+SRCS	=	main.cpp \
 			Zombie.cpp	\
+			ZombieHorde.cpp	\
 
 OBJ_DIR	=	./objects
 
