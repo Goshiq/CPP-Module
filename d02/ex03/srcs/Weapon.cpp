@@ -1,0 +1,26 @@
+#include "Weapon.hpp"
+
+Weapon::Weapon( void )
+{
+	this->type = "";
+}
+
+Weapon::~Weapon( void )
+{
+}
+
+Weapon::Weapon( std::string newType )
+{
+	this->type = newType;
+}
+
+const std::string&	Weapon::getType( void )
+{
+	return (this->type);
+}
+
+const Weapon&		Weapon::setType( std::string newType )
+{
+	this->type = newType;
+	return (*this);
+}
