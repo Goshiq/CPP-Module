@@ -6,11 +6,12 @@ H_DIR	=	./includes
 
 NAME	=	replace
 
-HFILES	=	\
+HFILES	=	error.hpp \
 
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	=	main.cpp \
+			error.cpp \
 
 OBJ_DIR	=	./objects
 
@@ -35,6 +36,7 @@ all:		$(NAME) | $(OBJ_DIR)
 
 clean:
 			rm -rf $(OBJ_DIR)
+			rm -f *.replace
 
 fclean:		clean
 			rm -f $(NAME)
