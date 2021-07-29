@@ -1,0 +1,21 @@
+#ifndef KAREN_H
+# define KAREN_H
+
+#include <iostream>
+
+class	Karen
+{
+	private:
+		void	error( void );
+		void	debug( void );
+		void	info( void );
+		void	warning( void );
+
+	public:
+		Karen( void );
+		~Karen( void );
+
+		void	complain( std::string level );
+};
+
+#endif

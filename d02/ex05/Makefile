@@ -4,14 +4,14 @@ DIR		=	./srcs
 
 H_DIR	=	./includes
 
-NAME	=	replace
+NAME	=	Karen
 
-HFILES	=	error.hpp \
+HFILES	=	Karen.hpp \
 
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	=	main.cpp \
-			error.cpp \
+			Karen.cpp \
 
 OBJ_DIR	=	./objects
 
