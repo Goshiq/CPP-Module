@@ -16,31 +16,20 @@ int	start_process(char **argv, std::ifstream &in)
 		err(std::strerror(errno));
 	}
 	repl = std::string(argv[2]);
-	inStr = 0;
 	for (std::string buff; std::getline(in, buff);)
 	{
-		pos = 0;
-		while (pos < buff.size())
-		{
-			if (buff[pos++] == repl[inStr++])
-			{
-				if (inStr == repl.size())
-				{
-					outFile << argv[3];
-					inStr = 0;
-				}
-			}
-			else
-			{
-				outFile << buff.substr(pos - inStr, inStr);
-				inStr = 0;
-			}
-		}
-		if (inStr)
-		{
-			outFile << buff.substr(pos - inStr, inStr);
-		}
 		inStr = 0;
+		while (inStr < buff.size())
+		{
+			pos = buff.find(repl, inStr);
+			if (pos == static_cast<size_t>(-1))
+			{
+				outFile << buff.substr(inStr, buff.size());
+				break ;
+			}
+			outFile << buff.substr(inStr, pos - inStr) << argv[3];
+			inStr = pos + repl.size();
+		}
 		outFile << '\n';
 	}
 	in.close();
