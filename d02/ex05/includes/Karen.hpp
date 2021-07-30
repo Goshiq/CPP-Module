@@ -10,6 +10,7 @@ class	Karen
 		void	debug( void );
 		void	info( void );
 		void	warning( void );
+		void	def( void );
 
 	public:
 		Karen( void );
